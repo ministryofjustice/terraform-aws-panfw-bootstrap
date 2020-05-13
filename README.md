@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 module "s3-bucket" {
-  source        = ""
+  source        = "git::https://gitlab.com/public-tf-modules/terraform-aws-panfw-s3_bootstrap?ref=v0.1.0"
   bucket_prefix = "bootstrap-me-"
 }
 ```
