@@ -1,44 +1,38 @@
-## [[Module Name]]
-### [[Overview]]
-Describe what the module should do.
+## AWS S3 PanFw Bootstrap module
+### Overview
+Simple take on the S3 Bootstrap bucket creation.
 
-### [[Caveats]]
-Describe what the module cannot do . 
+### Caveats
+This module will build out a bootstrap bucket in AWS but will not create any files for bootstrapping the Pan Fws.
 
-### Required Variables  
-__Name:__ [[Name of VAR]]  
-__TYPE:__ [[Type of VAR]]  
-__DESCRIPTION:__ [[Description]]  
-[[ if dictionary ]]  
-__REQUIRED KEYS:__ 
+### Usage
+```
+provider "aws" {
+  region = "us-east-1"
+}
 
-| key | type | Description |
----|---|---
-|  |  |
+module "s3-bucket" {
+  source        = ""
+  bucket_prefix = "bootstrap-me-"
+}
+```
 
-__OPTIONAL KEYS:__  
+## Providers
 
-| key | type | Description |
----|---|---
-|   |   |
+| Name | Version |
+|------|---------|
+| aws | ~> 2.7 |
 
-### Optional Variables
-__Name:__ [[Name of VAR]]  
-__TYPE:__ [[Type of VAR]]  
-__DESCRIPTION:__ [[Description]]  
-[[ if dictionary ]]  
-__REQUIRED KEYS:__   
+## Inputs
 
-| key | type | Description |
----|---|---
-  |   |   |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:-----:|
+| bootstrap\_directories | The directories comprising the bootstrap package | `list(string)` | <pre>[<br>  "config/",<br>  "content/",<br>  "software/",<br>  "license/",<br>  "plugins/"<br>]</pre> | no |
+| bucket\_prefix | Prefix of the bucket name | `string` | `"bootstrap-"` | no |
+| local\_directory | local folder to copy to s3 | `string` | `"files"` | no |
 
-__OPTIONAL KEYS:__  
+## Outputs
 
-| key | type | Description |
----|---|---
-|  |  |
-
-### Resources Created  
-(resoucrce)[link to resource]  
-
+| Name | Description |
+|------|-------------|
+| bucket\_id | ID of created bucket. |
