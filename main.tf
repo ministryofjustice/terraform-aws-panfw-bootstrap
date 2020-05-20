@@ -17,4 +17,5 @@ resource "aws_s3_bucket_object" "bootstrap_files" {
   bucket = aws_s3_bucket.bucket.id
   key    = each.value
   source = "${path.root}/${var.local_directory}/${each.value}"
+  etag   = filemd5("${path.root}/${var.local_directory}/${each.value}")
 }
