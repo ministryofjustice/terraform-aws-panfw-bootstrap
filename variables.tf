@@ -13,13 +13,13 @@ variable "bootstrap_directories" {
 variable "bucket" {
   description = "Bucket name"
   type        = string
-  default     = "bootstrap"
+  default     = null
 }
 
 variable "bucket_prefix" {
   description = "Prefix of the bucket name"
   type        = string
-  default     = "bootstrap-"
+  default     = null
 }
 
 variable "local_directory" {

@@ -1,6 +1,7 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = lower(var.bucket)
-  acl    = "private"
+  bucket        = var.bucket == null ? null : lower(var.bucket)
+  bucket_prefix = var.bucket_prefix == null ? null : lower(var.bucket_prefix)
+  acl           = "private"
 }
 
 resource "aws_s3_bucket_object" "bootstrap_dirs" {
