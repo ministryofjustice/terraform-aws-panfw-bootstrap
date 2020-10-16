@@ -28,11 +28,21 @@ module "s3-bucket" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
 | bootstrap\_directories | The directories comprising the bootstrap package | `list(string)` | <pre>[<br>  "config/",<br>  "content/",<br>  "software/",<br>  "license/",<br>  "plugins/"<br>]</pre> | no |
-| bucket\_prefix | Prefix of the bucket name | `string` | `"bootstrap-"` | no |
-| local\_directory | local folder to copy to s3 | `string` | `"files"` | no |
+| bucket\_prefix | Enable bucket prefixes | `bool` | `false` | no |
+| local\_directory | Local folder to copy to s3 buckets | `string` | `"files"` | no |
+| tags | Tags to be associated with s3 buckets | `map(string)` | `{}` | no |
+| pan\_authcode | Auth code to license VN-Series firewalls  | `string` | `null` | yes |
+| vm\_auth\_key | VM auth key generated on Panorama  | `string` | `null` | yes |
+| panorama1\_ip |  `panorama-server` parameter to be included in init-cfg.txt | `string` | `null` | yes |
+| panorama2\_ip |  `panorama-server-2` parameter to be included in init-cfg.txt | `string` | `null` | yes |
+| bootstrap\_phash | pash for the admin username | `string` | `null` | yes |
+| bootstrap\_environments | A map of environments | `map` | `{}` | yes |
+
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| bucket\_id | ID of created bucket. |
+| bootstrap\_s3\_buckets | Map of S3 bucket names and arns |
+| s3\_buckets\_arn | Map of S3 bucket arns |
+
