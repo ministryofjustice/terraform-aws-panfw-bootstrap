@@ -1,0 +1,16 @@
+type=dhcp-client
+ipv6-address=
+ipv6-default-gateway=
+hostname=
+panorama-server=${panorama1_ip}
+panorama-server-2=${panorama2_ip}
+tplname=${pan_template_name}
+dgname=${pan_device_group_name}
+dns-primary=
+dns-secondary=
+op-command-modes=
+dhcp-send-hostname=
+dhcp-send-client-id=
+dhcp-accept-server-hostname=
+dhcp-accept-server-domain=
+vm-auth-key=${vm_auth_key}

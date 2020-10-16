@@ -8,6 +8,7 @@ locals {
             }
         ]
     ])
+
     files = flatten([
         for k, v in var.bootstrap_environments : [
             for file in fileset("${path.root}/${var.local_directory}/${k}", "**") : {
@@ -39,6 +40,8 @@ data "template_file" "initconfig" {
     pan_template_name = each.value.pan_template_name
     panorama1_ip           = var.panorama1_ip
     panorama2_ip           = var.panorama2_ip
+    pan_dns_primary = var.pan_dns_primary
+    pan_dns_secondary = var.pan_dns_secondary
   }
 }
 
