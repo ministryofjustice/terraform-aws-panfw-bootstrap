@@ -23,6 +23,17 @@ variable "panorama2_ip" {
   description = "IP of secondary ha Panorama"
   default = ""
 }
+variable "pan_dns_primary" {
+  type        = string
+  description = "IP of primary DNS server"
+  default = ""
+}
+
+variable "pan_dns_secondary" {
+  type        = string
+  description = "IP of secondary DNS server"
+  default = ""
+}
 
 variable "bootstrap_environments" {
   type        = map
@@ -58,3 +69,4 @@ variable "bucket_prefix" {
   type = bool
   default = false
 }
+
