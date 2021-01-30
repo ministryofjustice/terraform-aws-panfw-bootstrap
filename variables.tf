@@ -74,9 +74,14 @@ variable "op-command-modes" {
   type        = string
 }
 
+variable "bootstrap_user" {
+  type        = string
+  description = "Username of the initial user in the bootstrap.xml"
+}
+
 variable "bootstrap_phash" {
   type        = string
-  description = "Hashed password to set in bootstrap.xml for initial admin credentials"
+  description = "Hashed password to set in bootstrap.xml for initial user credentials"
 }
 
 variable "local_directory" {
@@ -87,6 +92,6 @@ variable "local_directory" {
 
 variable "tags" {
   description = "Map of additional tags to apply to all resources"
-  type        = map
+  type        = map(any)
   default     = {}
 }
