@@ -35,6 +35,7 @@ resource "aws_s3_bucket_object" "bootstrap_xml" {
   key    = "config/bootstrap.xml"
   content = templatefile("${path.module}/bootstrap_templates/bootstrap.xml.tpl",
     {
+      bootstrap_user  = var.bootstrap_user
       bootstrap_phash = var.bootstrap_phash
     }
   )
