@@ -2,22 +2,13 @@
 <config urldb="paloaltonetworks" version="9.0.0">
   <mgt-config>
     <users>
-      <entry name="paloalto">
+      <entry name="${bootstrap_user}">
         <permissions>
           <role-based>
             <superuser>yes</superuser>
           </role-based>
         </permissions>
         <phash>${bootstrap_phash}</phash>
-      </entry>
-      <entry name="admin">
-        <permissions>
-          <role-based>
-            <superuser>yes</superuser>
-          </role-based>
-        </permissions>
-        <phash>${bootstrap_phash}</phash>
-        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDblNZOFdJbktrdGhVZnExdjFoSnlWdHhCSEpTYlRWQnhTTFBwYXg3MGUwRW5sZVZkdGk0VURLUFplREpQMVVxWjNYWjZIblk0L1NzQnhocFFXeW1LenpNYURqVnZ3TWhtcm04ampXYndRYXlqdEk4UVl0SnZNa1RhcHYwT2hWZTBmUUM5VXdTTnFHZ2FTKzVnUGdJRWVPaTB0a01OeU10VjY2bmhCL05ubktqc3RLSnoxYmt5K3RPUnQyeWNvYmdZWVJMdytRdWVLYmpHTkxFSTcrWkp5ak5URm8rUFAyaFZ4Q3hJL2ZzTnpvcTFjNjgyOXVkcmhwOUZsODhqbGNPSFdsYTUrMnRXS0VNVVRrKzY5eXZ3TmhrL3lvZ2F5VUFZZTJROXpEOG9pb2RzVnZSV29VOTk3dmt6TFE3c3FHT0VTYzk5a0xJTzFWaGtGalZHTDExSnogc3R1ZGVudC0wMy0wYWQ5MTllODQ2NmJAcXdpa2xhYnMubmV0</public-key>
       </entry>
     </users>
   </mgt-config>
