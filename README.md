@@ -24,7 +24,8 @@ to [bootstrap a VM-Series firewalls in AWS](https://docs.paloaltonetworks.com/vm
 |------|-------------|------|---------|:--------:|
 | authcode | Authcode to license the VM-series firewall | `string` | n/a | yes |
 | bootstrap\_directories | The directories comprising the bootstrap package | `list(string)` | <pre>[<br>  "config/",<br>  "content/",<br>  "software/",<br>  "license/",<br>  "plugins/"<br>]</pre> | no |
-| bootstrap\_phash | Hashed password to set in bootstrap.xml for initial admin credentials | `string` | n/a | yes |
+| bootstrap\_phash | Hashed password to set in bootstrap.xml for initial user credentials | `string` | n/a | yes |
+| bootstrap\_user | Username of the initial user in the bootstrap.xml | `string` | n/a | yes |
 | bucket\_prefix | Bucket prefix name | `string` | n/a | yes |
 | dgname | The Panorama device group name | `string` | `""` | no |
 | dns-primary | IP of primary DNS server | `string` | `""` | no |
