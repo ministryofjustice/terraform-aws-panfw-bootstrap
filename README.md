@@ -9,7 +9,7 @@ to [bootstrap a VM-Series firewalls in AWS](https://docs.paloaltonetworks.com/vm
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.12.20 |
+| terraform | >= 0.12.20 |
 | aws | ~> 2.7 |
 
 ## Providers
