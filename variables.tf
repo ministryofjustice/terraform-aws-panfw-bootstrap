@@ -74,6 +74,12 @@ variable "op-command-modes" {
   type        = string
 }
 
+variable "dhcp-accept-server-hostname" {
+  default     = "yes"
+  description = "Set dhcp-accept-server-hostname"
+  type        = string
+}
+
 variable "bootstrap_user" {
   type        = string
   description = "Username of the initial user in the bootstrap.xml"
