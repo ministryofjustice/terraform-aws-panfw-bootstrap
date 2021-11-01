@@ -17,15 +17,15 @@ resource "aws_s3_bucket_object" "init_cfg" {
   key    = "config/init-cfg.txt"
   content = templatefile("${path.module}/bootstrap_templates/init-cfg.txt.tpl",
     {
-      "hostname"         = var.hostname,
-      "panorama-server"  = var.panorama-server,
-      "panorama-server2" = var.panorama-server2,
-      "tplname"          = var.tplname,
-      "dgname"           = var.dgname,
-      "dns-primary"      = var.dns-primary,
-      "dns-secondary"    = var.dns-secondary,
-      "vm-auth-key"      = var.vm-auth-key,
-      "op-command-modes" = var.op-command-modes,
+      "hostname"                    = var.hostname,
+      "panorama-server"             = var.panorama-server,
+      "panorama-server2"            = var.panorama-server2,
+      "tplname"                     = var.tplname,
+      "dgname"                      = var.dgname,
+      "dns-primary"                 = var.dns-primary,
+      "dns-secondary"               = var.dns-secondary,
+      "vm-auth-key"                 = var.vm-auth-key,
+      "op-command-modes"            = var.op-command-modes,
       "dhcp-accept-server-hostname" = var.dhcp-accept-server-hostname
     }
   )
