@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<config urldb="paloaltonetworks" version="9.0.0">
+<config version="10.1.0" urldb="paloaltonetworks">
   <mgt-config>
     <users>
       <entry name="${bootstrap_user}">
@@ -9,6 +9,16 @@
           </role-based>
         </permissions>
         <phash>${bootstrap_phash}</phash>
+      </entry>
+      <entry name="lambda_api">
+        <permissions>
+          <role-based>
+            <custom>
+              <profile>read_api</profile>
+            </custom>
+          </role-based>
+        </permissions>
+        <phash>$5$rnoabumm$TP47lHGiq.gpPhoK.MFvKXnSME4BVkxO10JmzmcpXT7</phash>
       </entry>
     </users>
   </mgt-config>
@@ -68,6 +78,19 @@
         <scheduled>yes</scheduled>
       </report>
     </botnet>
+    <admin-role>
+      <entry name="read_api">
+        <role>
+          <device>
+            <webui/>
+            <xmlapi>
+              <op>enable</op>
+            </xmlapi>
+            <restapi/>
+          </device>
+        </role>
+      </entry>
+      </admin-role>
   </shared>
   <devices>
     <entry name="localhost.localdomain">
@@ -191,32 +214,36 @@
         <qos>
           <profile>
             <entry name="default">
-              <class>
-                <entry name="class1">
-                  <priority>real-time</priority>
-                </entry>
-                <entry name="class2">
-                  <priority>high</priority>
-                </entry>
-                <entry name="class3">
-                  <priority>high</priority>
-                </entry>
-                <entry name="class4">
-                  <priority>medium</priority>
-                </entry>
-                <entry name="class5">
-                  <priority>medium</priority>
-                </entry>
-                <entry name="class6">
-                  <priority>low</priority>
-                </entry>
-                <entry name="class7">
-                  <priority>low</priority>
-                </entry>
-                <entry name="class8">
-                  <priority>low</priority>
-                </entry>
-              </class>
+              <class-bandwidth-type>
+                <mbps>
+                  <class>
+                    <entry name="class1">
+                      <priority>real-time</priority>
+                    </entry>
+                    <entry name="class2">
+                      <priority>high</priority>
+                    </entry>
+                    <entry name="class3">
+                      <priority>high</priority>
+                    </entry>
+                    <entry name="class4">
+                      <priority>medium</priority>
+                    </entry>
+                    <entry name="class5">
+                      <priority>medium</priority>
+                    </entry>
+                    <entry name="class6">
+                      <priority>low</priority>
+                    </entry>
+                    <entry name="class7">
+                      <priority>low</priority>
+                    </entry>
+                    <entry name="class8">
+                      <priority>low</priority>
+                    </entry>
+                  </class>
+                </mbps>
+              </class-bandwidth-type>
             </entry>
           </profile>
         </qos>
@@ -254,15 +281,15 @@
           <update-schedule>
             <threats>
               <recurring>
-                <weekly>
-                  <day-of-week>wednesday</day-of-week>
-                  <at>01:02</at>
-                  <action>download-only</action>
-                </weekly>
+                <every-30-mins>				  
+                  <at>5</at>
+                  <action>download-and-install</action>
+                </every-30-mins>
+                <threshold>6</threshold>
               </recurring>
             </threats>
           </update-schedule>
-          <timezone>US/Pacific</timezone>
+          <timezone>Europe/London</timezone>
           <service>
             <disable-telnet>yes</disable-telnet>
             <disable-http>yes</disable-http>
